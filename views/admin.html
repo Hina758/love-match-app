@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>관리자 페이지</title>
+</head>
+<body>
+  <h1>입력 현황</h1>
+  <form action="/admin/toggle" method="POST">
+    <button type="submit"><%= publicStatus ? "비공개로 전환" : "공개하기" %></button>
+  </form>
+  <h2>사용자 목록</h2>
+  <ul>
+    <% users.forEach(user => { %>
+      <li><%= user.username %> → <%= user.crush %></li>
+    <% }) %>
+  </ul>
+</body>
+</html>
